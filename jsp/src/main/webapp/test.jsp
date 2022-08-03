@@ -11,6 +11,7 @@
 	<%
 		int num = 50;
 		System.out.print("결과 : " + num);
+		out.print("결과 : " + num + "<b>이에요</b>");
 	%>
 
 </body>
