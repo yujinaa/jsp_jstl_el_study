@@ -8,7 +8,10 @@
 </head>
 <body>
 	<h1>test2.jsp</h1>
+	<hr>
+	<!-- 경로이동 방법1. -->
 	<a href="http://localhost:8088/jsp/webContent.jsp">webContent 페이지로 이동</a>
 	<a href="http://localhost:8088/jsp/test1/test1.jsp">test1 페이지로 이동</a>
+	<hr>
 </body>
 </html>
