@@ -14,9 +14,13 @@
 	<a href="http://localhost:8088/jsp/test1/test2/test2.jsp">test2 페이지로 이동</a>
 	<hr>
 	<!-- 경로이동 방법2.절대경로 -->
+	<h3>절대경로 : /부터 시작하고 경로는 프로젝트 명부터 들어온다</h3>
 	<a href="/jsp/webContent.jsp">webContent 페이지로 이동</a>
 	<a href="/jsp/test1/test2/test2.jsp">test2 페이지로 이동</a>
 	<hr>
 	<!-- 경로이동 방법3.상대경로 -->
+	<h3>상대경로 : 자신이 있는 위치에서 시작하고 맨앞에 /가 없어야한다</h3>
+	<a href="../webContent.jsp">webContent 페이지로 이동</a><!-- 한단계 전으로 가야 webContent페이지로 이동가능 -->
+	<a href="test2/test2.jsp">test2 페이지로 이동</a>
 </body>
 </html>
