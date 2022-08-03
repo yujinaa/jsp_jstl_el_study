@@ -10,9 +10,12 @@
 	<h1>연습중</h1>
 	<%
 		int num = 50;
-		System.out.print("결과 : " + num);
-		out.print("결과 : " + num + "<b>이에요</b>");
+		System.out.print("결과 : " + num);//서버단 콘솔창에만 출력된다
+		out.print("결과1 : " + num + "<b>이에요</b>"); //out.print : 사용자(웹페이지로 전달)에게 보내고 싶을 때 사용
 	%>
+	
+	<!-- <%= %> : 표현식 -->
+	<%= "결과2 : " + num + "<b>이에요</b>" %>
 
 </body>
 </html>
