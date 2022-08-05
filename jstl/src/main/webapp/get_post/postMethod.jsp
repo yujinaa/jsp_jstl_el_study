@@ -21,6 +21,20 @@
 	<h3>el로 데이터 받기 : param을 사용해서 얻어온다</h3>
 	${param.id }<br>
 	${param.pwd }<br>
+	<hr>
+	<a href="http://localhost:8088/jsp/webContent.jsp">webContent 페이지로 이동</a>
+	<a href="http://localhost:8088/jsp/test1/test1.jsp">test1 페이지로 이동</a>
+	<a href="http://localhost:8088/jsp/test1/test2/test2.jsp">test2 페이지로 이동</a>
+	<hr>
+	<h1>절대경로</h1>
+	<a href="/jsp/webContent.jsp">webContent 페이지로 이동</a>
+	<a href="/jsp/test1/test1.jsp">test1 페이지로 이동</a>
+	<a href="/jsp/test1/test2/test2.jsp">test2 페이지로 이동</a>
+	<hr>
+	<h1>상대경로</h1>
+	<a href="../webContent.jsp">webContent 페이지로 이동</a>
+	<a href="../test1/test1.jsp">test1 페이지로 이동</a>
+	<a href="../test1/test2/test2.jsp">test2 페이지로 이동</a>
 
 </body>
 </html>
