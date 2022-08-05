@@ -8,9 +8,9 @@
 <title>Insert title here</title>
 </head>
 <body>postMethod<br>
-<fmt:requestEncoding value="utf-8"/><!-- 한글처리 이방법도 있다 -->
+<fmt:requestEncoding value="utf-8"/><!-- jstl 방식 : 한글처리 방법 -->
 <% 
-   request.setCharacterEncoding("utf-8"); // 요청시 깨지는 한글처리 
+   request.setCharacterEncoding("utf-8"); // 요청시 깨지는 한글처리 :jsp방식
    response.setCharacterEncoding("utf-8"); //응답시 깨지는 한글처리
 %> 
 	<h1>postMethod 페이지</h1>
