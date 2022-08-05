@@ -1,7 +1,7 @@
 # jsp
 jsp 개인공부
 
-# jsp 의미
+# jsp란?
 - 동적 웹 서비스를 제공
 - 생성된 웹 페이지를 웹 브라우저에 돌려주는 언어
 - HTML내에 자바 코드를 삽입해 웹 서버에서 동적으로 웹 페이지를 생성
@@ -17,5 +17,10 @@ jsp 개인공부
 
 # jstl
 jstl 개인공부
+
+# jstl이란?
+- <%@ : 지시자라고 부르며, 보통 implort나 설정할 때 사용
+- <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>을 써야한다.
+
 
 
