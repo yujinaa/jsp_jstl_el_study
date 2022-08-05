@@ -8,7 +8,10 @@
 </head>
 <body>postMethod<br>
 
-<% request.setCharacterEncoding("utf-8"); %> <!-- 깨지는 한글처리 -->
+<% 
+   request.setCharacterEncoding("utf-8"); // 요청시 깨지는 한글처리 
+   response.setCharacterEncoding("utf-8"); //응답시 깨지는 한글처리
+%> 
 	<h1>postMethod 페이지</h1>
 	<hr>
 	아이디 : <%= request.getParameter("id") %><br><!-- 사용자가 넘겨준값을 받아올땐 request.getParameter를 사용 -->
