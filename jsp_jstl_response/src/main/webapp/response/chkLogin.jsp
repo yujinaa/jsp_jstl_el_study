@@ -17,6 +17,7 @@
 		String inputPwd = request.getParameter("pwd"); //사용자가 입력한 id
 		if(dbId.equals(inputId) && dbPwd.equals(inputPwd)){
 			out.print("인증통과");
+			response.sendRedirect("main.jsp"); //인증성공시 메인페이지로 이동
 		}else{
 			out.print("인증실패");
 			response.sendRedirect("loginForm.jsp");  //인증실패시 다시 로그인 페이지로 돌아간다

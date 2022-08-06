@@ -6,7 +6,8 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body>main<br>
+	성공적으로 로그인 되었습니다!!!!!
 
 </body>
 </html>
