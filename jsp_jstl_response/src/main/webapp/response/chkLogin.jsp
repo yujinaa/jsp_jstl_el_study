@@ -20,6 +20,9 @@
 		<c:choose>
 			<c:when test="${dbPwd eq inputPwd }"> <!-- 비밀번호 비교 -->
 				로그인 성공!
+				<script type="text/javascript">   //자바스크립트 사용
+					alert('로그인 성공')
+				</script>
 			</c:when>
 			<c:otherwise>
 				비밀번호 틀림!
