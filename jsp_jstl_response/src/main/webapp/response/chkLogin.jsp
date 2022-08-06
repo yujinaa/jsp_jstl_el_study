@@ -15,7 +15,24 @@
 <c:set var = "dbPwd" value = "1"/>
 <c:set var = "inputId" value = "${param.id }"/>
 <c:set var = "inputPwd" value = "${param.pwd }"/>
+<c:choose>
+	<c:when test="${dbId eq inputId }"> <!-- id만 비교 -->
+		<c:choose>
+			<c:when test="${dbPwd eq inputPwd }"> <!-- 비밀번호 비교 -->
+				로그인 성공!
+			</c:when>
+			<c:otherwise>
+				비밀번호 틀림!
+			</c:otherwise>
+		</c:choose>
+	</c:when>
+	<c:otherwise>
+		<b style="color: red;">존재하지 않는 아이디 입니다</b>
+	</c:otherwise>
+</c:choose>
+
 <!-- 조건문 -->
+<%--
 <c:choose>
 	<c:when test="${dbId ==inputId && dbPwd eq inputPwd }"> <!-- if, elseif -->
 		<c:redirect url="main.jsp"/> <!-- 인증성공시 -->
@@ -24,6 +41,7 @@
 		<c:redirect url="loginForm.jsp"/> <!-- 인증실패시 -->
 	</c:otherwise> <!-- else -->
 </c:choose>
+--%>
 
 <%-- 단순if
 <c:if test ="${dbId ==inputId && dbPwd eq inputPwd }"> <!-- 단순 if문  : id, pwd가 비교할 것과 같다면 -->
