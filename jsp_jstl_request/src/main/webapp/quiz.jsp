@@ -26,7 +26,7 @@
 			<input type="checkbox" name = "weather" value="겨울">겨울</td>
 		</tr>
 		<tr><td><input type="submit" value="전송"></td>
-		<td><input type="button" value = "취소"></td>
+		<td><input type="reset" value = "취소"></td>
 		</tr>
 	</form>
 </table>
