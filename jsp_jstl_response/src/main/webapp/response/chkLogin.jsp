@@ -16,10 +16,12 @@
 <c:set var = "inputId" value = "${param.id }"/>
 <c:set var = "inputPwd" value = "${param.pwd }"/>
 <c:if test ="${dbId ==inputId && dbPwd eq inputPwd }"> <!-- 단순 if문  : id, pwd가 비교할 것과 같다면 -->
-인증성공
+	인증성공
+	<c:redirect url="main.jsp"/>
 </c:if>
 <c:if test="${dbId != inputId || dbPwd ne inputPwd }">  <!-- 같지 않으면 -->
 	인증실패
+	<c:redirect url="loginForm.jsp"/>
 </c:if>
 
 	<!-- 1.자바코드로 작성 -->
