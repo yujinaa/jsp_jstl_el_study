@@ -9,6 +9,5 @@
 <body>main<br>
 	성공적으로 로그인 되었습니다!!!!!<br>
 	넘어온 아이디 : ${param.id }, ${param.pwd }  <!-- 넘겨준 id를 받는다 --> 
-
 </body>
 </html>
