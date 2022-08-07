@@ -22,6 +22,9 @@
 		request.setAttribute("name", "request value");
 		session.setAttribute("name", "session value");
 		application.setAttribute("name", "application value");
+		
+		//forward를 쓰면 request도 다음까지 연결된다
+		//request.getRequestDispatcher("secondPage.jsp").forward(request, response);
 	%>
 	
 	<%--가져오기  getAttribute--%>
