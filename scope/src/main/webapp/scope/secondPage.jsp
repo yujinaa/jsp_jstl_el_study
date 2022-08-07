@@ -6,7 +6,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
-
+<body>secondPage<br>
+	page : <%= pageContext.getAttribute("name")%><br>
+	request : <%= request.getAttribute("name")%><br>
+	session : <%= session.getAttribute("name")%><br>
+	application: <%= application.getAttribute("name")%><br>
+	
+	<a href = "thirdPage.jsp">thirdPage.jsp</a>
 </body>
 </html>
