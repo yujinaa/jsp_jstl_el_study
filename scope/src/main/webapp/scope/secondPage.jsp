@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>secondPage<br>
+	name : ${name }<br>
 	page : <%= pageContext.getAttribute("name")%><br>
 	request : <%= request.getAttribute("name")%><br>
 	session : <%= session.getAttribute("name")%><br>

@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
-<body>firstPage<br>
+<body>firstPage<hr>
 
 <!-- 
 	page         :    현재 페이지에서만 유지되는 값
@@ -28,6 +28,7 @@
 	%>
 	
 	<%--가져오기  getAttribute--%>
+	name : ${name }<br>
 	page : <%= pageContext.getAttribute("name")%><br>
 	request : <%= request.getAttribute("name")%><br>
 	session : <%= session.getAttribute("name")%><br>
