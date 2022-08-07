@@ -22,5 +22,19 @@ jstl 개인공부
 - <%@ : 지시자라고 부르며, 보통 implort나 설정할 때 사용
 - <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>을 써야한다.
 
+# el
+- ${ }로 표현한다.
+
+#scope : 범위
+- 범위가 가장 작은게 우선시된다.
+- page < request < session < application
+
+# 범위 종류
+- page :  현재 페이지에서만 유지되는 값
+- request : 현재 페이지 또는 다음 페이지까지 유지되는 값
+		        단, request는 다음 페이지까지 전달하고자 하면 forword사용해야 한다.(기억은하자)
+-	session : 웹 브라우저가 살아있는 동안 유지된다.다른 부라우저는 세션 유지x(!!!기억하자. 많이 쓴다!!!)
+-	application : 서버가 살아있는 동안 유지된다. 
+
 
 
