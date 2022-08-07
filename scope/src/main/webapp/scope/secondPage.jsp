@@ -14,5 +14,6 @@
 	application: <%= application.getAttribute("name")%><br>
 	
 	<a href = "thirdPage.jsp">thirdPage.jsp</a>
+	session : ${se }<br>
 </body>
 </html>

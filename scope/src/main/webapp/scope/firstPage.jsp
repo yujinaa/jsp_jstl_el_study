@@ -29,14 +29,17 @@
 	
 	<%--가져오기  getAttribute--%>
 	name : ${name }<br>
-	page : <%= pageContext.getAttribute("name")%>, ${pageScope.name }<br> <!-- el로 값가져오기 --> -->
-	
+	page : <%= pageContext.getAttribute("name")%>, ${pageScope.name }<br> <!-- el로 값가져오기 --> 
 	request : <%= request.getAttribute("name")%>,${requestScope.name }<br>
 	session : <%= session.getAttribute("name")%>,${sessionScope.name }<br>
 	application: <%= application.getAttribute("name")%>,${applicationScope.name }<br>
 	
 	<a href = "secondPage.jsp">secondPage.jsp</a>
-	
 
+<%--el문법 적용하기 --%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!-- -> c:set을 var, value만 쓰면 변수설정(현재페이지에서만 사용가능한 변수)이고, scope까지 쓰면 범위를 설정한다. -->
+<c:set var = "se" value = "세션설정값입니다" scope = "session"/> 
+session : ${se }<br>
 </body>
 </html>
