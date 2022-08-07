@@ -25,7 +25,7 @@ jstl 개인공부
 # el
 - ${ }로 표현한다.
 
-#scope : 범위
+# scope : 범위
 - 범위가 가장 작은게 우선시된다.
 - page < request < session < application
 
