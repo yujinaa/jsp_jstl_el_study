@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>login<hr>
+	session : ${loginUser } , ${sessionScope.loginUser }<hr>
 	<form action="chkUser.jsp" method="post">
 		<input type="text" name ="id"><br>
 		<input type="text" name ="pwd"><br>
