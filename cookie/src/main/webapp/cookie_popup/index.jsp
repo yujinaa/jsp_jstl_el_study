@@ -21,6 +21,9 @@
 		cookie.setMaxAge(5); //쿠키유지시간 설정(5초동안 유지)
 		response.addCookie(cookie); //응답 : 사용자에게 쿠키값 전달
 	%>
+	<script type="text/javascript">
+		window.open("popup.jsp","","width=300,height=200,top=500,left=500")
+	</script>
 
 </body>
 </html>
