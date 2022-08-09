@@ -16,6 +16,7 @@
 
 		<h1>main</h1>
 		
+	<c:import url="footer.jsp"/>
 	<jsp:include page="footer.jsp"/>
 
 </body>
