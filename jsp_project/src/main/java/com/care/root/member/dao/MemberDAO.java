@@ -16,4 +16,8 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
+	public int getMemberList() {
+		System.out.println("getMemberLiSst 호출 되었습니다");
+		return 12345;
+	}
 }

@@ -24,11 +24,11 @@
 
 .navdiv {
 	width: 100%;
-	background-color: olive;
+	background-color: navy;
 }
 
 nav {
-	background-color: olive;
+	background-color: navy;
 	width: 1000px;
 }
 
@@ -61,7 +61,7 @@ nav ul li a:hover {
 	text-align: center;
 	margin-top: 0px;
 	padding-bottom: 20px;
-	color: burlywood;
+	color: navy;
 	font-family: Gabriola;
 }
 

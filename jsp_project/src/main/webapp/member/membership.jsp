@@ -10,6 +10,12 @@
 </head>
 <body>membership.jsp<br>
 	<c:import url="../default/header.jsp"/>
+	<jsp:useBean id="dao" class="com.care.root.member.dao.MemberDAO"/>
+	
+	<c:set var="list" value = "${dao.getMemberList() }"/> <!-- dao의 getMemberList라는 메소드 호출 -->
+	리턴 값 : ${list }
+	
+	
 	<c:import url="../default/footer.jsp"/>
 
 </body>
