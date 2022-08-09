@@ -9,13 +9,12 @@
 <title>Insert title here</title>
 </head>
 <body>login.jsp<hr>
-	<form action="${pageContext }/login_param/chkUser.jsp" method="post">
+	<form action="${contextPath }/login_param/chkUser.jsp" method="post">
 		<input type="text" name = "id"><br>
 		<input type="password" name = "pwd"><br>
 		<input type="radio" name = "user" value="user" checked="checked">사용자
 		<input type="radio" name = "user" value="admin">관리자<br>
-		<input type="submit"value="로그인">		
+		<input type="submit" value="로그인">		
 	</form>
-
 </body>
 </html>
