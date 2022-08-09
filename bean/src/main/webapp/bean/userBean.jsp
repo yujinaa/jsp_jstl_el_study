@@ -16,7 +16,8 @@
 	<jsp:setProperty property="pwd" name="dto" value = "비밀번호"/>    <%--setProperty는 setter의의미 --%>
 	${dto.setId("비가 많이오네요") }
 	id : ${dto.id }, ${dto.getId() }<br>   <!--값을 가져오는 방법은 두가지 -->
-	pwd : ${dto.pwd }
+	pwd : ${dto.pwd }, 
+	<jsp:getProperty property="pwd" name="dto"/>  <!-- 값받기 getProperty -->
 	
 <%-- 자바로 객체만들기
 	<%
