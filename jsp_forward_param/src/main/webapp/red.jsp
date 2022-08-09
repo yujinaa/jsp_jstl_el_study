@@ -8,6 +8,6 @@
 </head>
 <body>red<hr>
 	red페이지
-	<jsp:forward page="yellow.jsp"/>
+	<jsp:forward page="yellow.jsp"/> <!-- red페이지를 실행하지만 yellow페이지로 이동한다 -->
 </body>
 </html>
