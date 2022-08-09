@@ -12,8 +12,24 @@
 </head>
 <body>chkUser.jsp<hr>
 <fmt:requestEncoding value ="utf-8"/>
+
+<c:set var="user" value="${param.user }"/>              
+<c:choose>
+	<c:when test="${user =='user' }">
+		<c:redirect url = "userPage.jsp">                  
+			<c:param name="n" value = "jstl로 넘겨줌"/>
+		</c:redirect>
+	</c:when>
+	<c:otherwise>
+		<jsp:forward page="adminPage.jsp">
+			<jsp:param value="추가로 넘어가는 값" name="n"/>
+		</jsp:forward>
+	</c:otherwise>
+</c:choose>
+
+
 	<%--자바로 표현하기 --%>
-	
+<%-- 
 		<%                                                    
 		String id = request.getParameter("id");          
 		String pwd = request.getParameter("pwd");
@@ -29,6 +45,6 @@
 				<jsp:param value="추가로 넘어가는 값" name="n"/>   
 			</jsp:forward>
 <%}  %>
-
+--%>	
 </body>
 </html>
