@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@  taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@  taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <c:set var = "contextPath" value = "${pageContext.request.contextPath }"/>
  
 <!DOCTYPE html>
@@ -10,6 +11,7 @@
 <title>Insert title here</title>
 </head>
 <body>chkUser.jsp<hr>
+<fmt:requestEncoding value ="utf-8"/>
 	<%--자바로 표현하기 --%>
 	
 		<%                                                    
@@ -18,8 +20,8 @@
 		String user = request.getParameter("user");
 		
 		if(user.equals("user")){%>                                         
-			<jsp:forward page="userPage.jsp">            
-				<jsp:param value="추가로 넘어가는 값" name="n"/>
+			<jsp:forward page="userPage.jsp">                           
+				<jsp:param value="추가로 넘어가는 값" name="n"/>     
 			</jsp:forward>
 			
 		<%} else{ %>                                           

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@  taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %> <!-- 깨지는 -->   
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>userPage.jsp<hr>
+<fmt:requestEncoding value ="utf-8"/>  <!-- 한글처리 -->
 	아이디 : <%=request.getParameter("id") %><br>
 	비밀번호 : ${param.pwd }<br>
 	사용자 : ${param.user }<br>
