@@ -153,7 +153,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      </Host>
+      <Context docBase="jsp" path="/jsp" reloadable="true" source="org.eclipse.jst.jee.server:jsp"/><Context docBase="jstl" path="/jstl" reloadable="true" source="org.eclipse.jst.jee.server:jstl"/><Context docBase="jsp_jstl_request" path="/jsp_jstl_request" reloadable="true" source="org.eclipse.jst.jee.server:jsp_jstl_request"/><Context docBase="jsp_jstl_response" path="/jsp_jstl_response" reloadable="true" source="org.eclipse.jst.jee.server:jsp_jstl_response"/><Context docBase="scope" path="/scope" reloadable="true" source="org.eclipse.jst.jee.server:scope"/><Context docBase="session" path="/session" reloadable="true" source="org.eclipse.jst.jee.server:session"/><Context docBase="cookie_popup" path="/cookie_popup" reloadable="true" source="org.eclipse.jst.jee.server:cookie_popup"/><Context docBase="jsp_forward_param" path="/jsp_forward_param" reloadable="true" source="org.eclipse.jst.jee.server:jsp_forward_param"/><Context docBase="include" path="/include" reloadable="true" source="org.eclipse.jst.jee.server:include"/></Host>
     </Engine>
   </Service>
 </Server>
