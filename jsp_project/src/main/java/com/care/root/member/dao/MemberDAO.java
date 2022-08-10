@@ -17,7 +17,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이브 로드 성공");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "id","pwd");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "id","owd");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -47,6 +47,18 @@ public class MemberDAO {
 		System.out.println("pwd : " + dto.getPwd());
 		System.out.println("name: " + dto.getName());
 		System.out.println("addr : " + dto.getAddr());
-		return 1;
+		String sql = "insert into jsp_member(id, pwd, name, addr) values(?,?,?,?)";
+		int result = 0;
+		try {
+			ps = con.prepareStatement(sql); //실행객체 얻어오기
+			ps.setString(1, dto.getId());
+			ps.setString(2, dto.getPwd());
+			ps.setString(3, dto.getName());
+			ps.setString(4, dto.getAddr());
+			result = ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return result;
 	}
 }
