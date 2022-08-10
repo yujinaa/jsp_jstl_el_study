@@ -10,9 +10,9 @@
 </head>
 <body>membership.jsp<br>
 	<c:import url="../default/header.jsp"/>
+<div class = "wrap">
 	<jsp:useBean id="dao" class="com.care.root.member.dao.MemberDAO"/>
-		<c:set var="contextPath" value = "${pageContext.request.contextPath }"/>
-	<c:set var="list" value = "${dao.getMemberList() }"/> <!-- dao의 getMemberList라는 메소드 호출 -->
+	<c:set var="list" value = "${dao.getMemberList() }"/>              <!-- dao의 getMemberList라는 메소드 호출 -->
 	리턴 값 : ${list }
 		<table border = "1">   
 		<tr>
@@ -28,14 +28,11 @@
 	</c:forEach>      
 	<tr>
 		<td colspan="4">    
-		<button type="button" onclick="location.href='${contextpath}/member/member_register.jsp'">등록</button>  -> 이렇게 해야 위치이동
+			<button type="button" onclick="location.href='${contextPath}/member/member_register.jsp'">등록</button>		
 		</td>
 	</tr>
 	</table>
-	
-	
-	
+</div>
 	<c:import url="../default/footer.jsp"/>
-
 </body>
 </html>

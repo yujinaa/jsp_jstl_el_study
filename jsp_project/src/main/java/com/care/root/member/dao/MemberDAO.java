@@ -17,7 +17,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이브 로드 성공");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "dbwls","dbwls9874");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "아이디","비번");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
