@@ -85,4 +85,13 @@ public class MemberDAO {
 			
 			return dto;
 		}
+		public int modifySave(MemberDTO dto) {
+			int result = 0;
+			System.out.println(dto.getId());
+			System.out.println(dto.getPwd());
+			System.out.println(dto.getName());
+			System.out.println(dto.getAddr());
+			
+			return result;
+		}
 }
