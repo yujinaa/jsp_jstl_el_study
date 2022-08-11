@@ -17,7 +17,7 @@ public class MemberDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이브 로드 성공");
-			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "id","pw");
+			con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "id","pwd");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -61,4 +61,28 @@ public class MemberDAO {
 		}
 		return result;
 	}
+		public MemberDTO getMember(String userId) { //한명값이라 list아닌 memberDTO로 받기
+			System.out.println("id : " + userId);
+			String sql = "select * from jsp_member where id='"+userId+"'"; //문자를 직접적으로 연결시 ''넣어준다
+			System.out.println(sql);
+			MemberDTO dto = null;
+			
+			//db로부터 데이터 가져오기
+			try {
+				ps= con.prepareStatement(sql);
+				rs=ps.executeQuery();
+				if(rs.next()) {                              //지금은 한 사람에 대한 정보라 반복문이 아닌 if로 처리하는게 낫다
+					dto= new MemberDTO();
+					dto.setId(rs.getString("id"));
+					dto.setPwd(rs.getString("pwd"));
+					dto.setName(rs.getString("name"));
+					dto.setAddr(rs.getString("addr"));   
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			
+			return dto;
+		}
 }

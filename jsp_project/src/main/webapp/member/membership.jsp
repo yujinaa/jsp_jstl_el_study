@@ -23,7 +23,7 @@
 			<td>${member.id }</td>  
 			<td>${member.pwd }</td>
 			<td>
-				<a href="${contextPath }/member/member_info.jsp?id=${member.id} & pwd=${member.pwd }">${member.name }</a> <!-- 개인정보 보여주는 위치 -->
+				<a href="${contextPath }/member/member_info.jsp?id=${member.id}">${member.name }</a> <!-- 개인정보 보여주는 위치 -->
 			</td>
 			<td>${member.addr }</td>
 		</tr>	
