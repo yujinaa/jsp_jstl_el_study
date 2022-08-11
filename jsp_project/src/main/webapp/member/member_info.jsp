@@ -12,7 +12,8 @@
 <c:import url="../default/header.jsp"/>
 
 	<h1>개인 정보 페이지</h1>
-	
+	id : ${param.id }<br>
+	pwd : ${param.pwd }<br>
 <c:import url="../default/footer.jsp"/>
 </body>
 </html>
