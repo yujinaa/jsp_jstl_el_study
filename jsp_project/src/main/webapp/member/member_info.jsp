@@ -19,6 +19,10 @@
 	pwd : ${mem.pwd }<br>
 	name : ${mem.name }<br>
 	addr : ${mem.addr }<br>
+	<hr>
+	<!-- 수정,삭제  -->
+	<button type="button" onclick="location.href='modify.jsp?id=${mem.id}'">수정 </button> <!-- onclick=location.href를 써줘야한다 -->
+	<button type="button" onclick="">삭제 </button>
 <c:import url="../default/footer.jsp"/>
 </body>
 </html>
