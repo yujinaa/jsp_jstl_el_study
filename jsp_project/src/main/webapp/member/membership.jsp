@@ -22,7 +22,9 @@
 		<tr>
 			<td>${member.id }</td>  
 			<td>${member.pwd }</td>
-			<td>${member.name }</td>
+			<td>
+				<a href="${contextPath }/member/member_info.jsp">${member.name }</a> <!-- 개인정보 보여주는 위치 -->
+			</td>
 			<td>${member.addr }</td>
 		</tr>	
 	</c:forEach>      
