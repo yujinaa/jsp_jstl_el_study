@@ -87,11 +87,25 @@ public class MemberDAO {
 		}
 		public int modifySave(MemberDTO dto) {
 			int result = 0;
-			System.out.println(dto.getId());
-			System.out.println(dto.getPwd());
-			System.out.println(dto.getName());
-			System.out.println(dto.getAddr());
+//			System.out.println(dto.getId());
+//			System.out.println(dto.getPwd());
+//			System.out.println(dto.getName());
+//			System.out.println(dto.getAddr());
 			
-			return result;
+			//실질적으로 db수정되게하기
+			String sql = 
+					"update jsp_member set pwd=?, name=?,addr=? where id=?";   //대입할 값 모두 넣어준다. 해당하는 값을 모두 수정한다
+				try {
+					ps = con.prepareStatement(sql);
+					ps.setString(1, dto.getPwd());     //수정할 값에 대한 내용들
+					ps.setString(2, dto.getName());
+					ps.setString(3, dto.getAddr());
+					ps.setString(4, dto.getId());
+					result = ps.executeUpdate();   //그리고 실행. 성공적으로 실행했다면 result엔 1이 저장돼고, 실패시 0이라는 값이 저장
+				} catch (Exception e) {
+					e.printStackTrace();      //저장하는데 실패하면 에러발생
+				}
+				return result;
+
 		}
 }
