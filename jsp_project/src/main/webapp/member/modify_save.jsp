@@ -18,6 +18,16 @@
 <jsp:setProperty property="*" name="dto"/>  <!-- 모든값 dto에 저장하기 -->
 
 <c:set var= "result" value="${dao.modifySave(dto) }"/>  	
-
+<c:choose>
+	<c:when test="${result==1 }">
+		<script type="text/javascript">
+			alert(수정 성공입니다);
+			location.href='member_info.jsp?id=${dto.getId()}'
+		</script>
+	</c:when>
+	<c:otherwise>
+	
+	</c:otherwise>
+</c:choose>
 </body>
 </html>
