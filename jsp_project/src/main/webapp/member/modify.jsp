@@ -15,7 +15,7 @@
 
 <c:import url="../default/header.jsp"/>
 <form action="modify_save.jsp" method="post">
-<input type="hidden" name="id" value = "${mem.id }">    <!-- id는 변경되면 안돼기 때문에 id를 hidden으로 처리한다 -->
+<input type="hidden" name="id" value = "${mem.id }">   
 비밀번호 : <input type="text" name="pwd" value = "${mem.pwd }"><br>    
 이름 : <input type="text" name="name" value = "${mem.name }"><br>
 주소 : <input type="text" name="addr" value = "${mem.addr }"><br>

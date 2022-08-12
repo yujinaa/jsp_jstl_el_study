@@ -15,18 +15,21 @@
 
 <jsp:useBean id="dao" class = "com.care.root.member.dao.MemberDAO"/>
 <jsp:useBean id="dto" class = "com.care.root.member.dto.MemberDTO"/>
-<jsp:setProperty property="*" name="dto"/>  <!-- 모든값 dto에 저장하기 -->
+<jsp:setProperty property="*" name="dto"/>                        <!-- 모든값 dto에 저장하기 -->
 
-<c:set var= "result" value="${dao.modifySave(dto) }"/>  	
+<c:set var= "result" value="${dao.modifysave(dto) }"/>  	
 <c:choose>
 	<c:when test="${result==1 }">
 		<script type="text/javascript">
-			alert(수정 성공입니다);
+			alert('수정 성공입니다');
 			location.href='member_info.jsp?id=${dto.getId()}'
 		</script>
 	</c:when>
 	<c:otherwise>
-	
+		<script type="text/javascript">
+			alert("수정 실패입니다");
+			location.href='modify.jsp?id=${dto.getId()}'
+		</script>
 	</c:otherwise>
 </c:choose>
 </body>

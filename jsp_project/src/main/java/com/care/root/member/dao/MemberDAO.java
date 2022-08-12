@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.care.root.member.dto.MemberDTO;
@@ -85,12 +84,12 @@ public class MemberDAO {
 			
 			return dto;
 		}
-		public int modifySave(MemberDTO dto) {
+		public int modifysave(MemberDTO dto) {
 			int result = 0;
-//			System.out.println(dto.getId());
-//			System.out.println(dto.getPwd());
-//			System.out.println(dto.getName());
-//			System.out.println(dto.getAddr());
+			System.out.println(dto.getId());
+			System.out.println(dto.getPwd());
+			System.out.println(dto.getName());
+			System.out.println(dto.getAddr());
 			
 			//실질적으로 db수정되게하기
 			String sql = 
@@ -107,5 +106,17 @@ public class MemberDAO {
 				}
 				return result;
 
+		}
+		//삭제하기
+		public int delete(String userId) {
+			int result=0;
+			String sql="delete from jsp_member where id = '"+userId+"'";
+			try {
+				ps=con.prepareStatement(sql);
+				result= ps.executeUpdate();
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return result;
 		}
 }
