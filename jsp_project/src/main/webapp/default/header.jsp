@@ -82,6 +82,7 @@ nav ul li a:hover {
 				<ul>
 					<li><a href="${contextPath }/default/main.jsp">HOME</a></li>
 					<li><a href="${contextPath }/member/membership.jsp">MEMBERSHIP</a></li>
+					<li><a href="${contextPath }/login/login.jsp">LOGIN</a></li>
 				</ul>
 			</nav>
 		</div>
