@@ -14,6 +14,7 @@
 	<c:choose>
 		<c:when test="${result ==0 }">
 			로그인성공
+			<c:set var="loginUser" value="${param.id }" scope="session"/>  <!-- 세션 만들기 -->
 			<script type="text/javascript">
 				alert('${param.id }님 환영합니다!!!')
 				location.href = "${contextPath }/default/main.jsp"
