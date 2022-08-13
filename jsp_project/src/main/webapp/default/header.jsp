@@ -24,11 +24,11 @@
 
 .navdiv {
 	width: 100%;
-	background-color: navy;
+	background-color: #78A9ED;
 }
 
 nav {
-	background-color: navy;
+	background-color: #78A9ED;
 	width: 1000px;
 }
 
@@ -51,7 +51,7 @@ nav ul li a {
 nav ul li a:hover {
 	color: orange;
 	padding-bottom: 3px; /* a태그 밑줄과 글씨 간격*/
-	border-bottom: 1px solid orange;
+	border-bottom: 1px solid #D2691E;
 	transition: all 0.25s;
 }
 
@@ -61,7 +61,7 @@ nav ul li a:hover {
 	text-align: center;
 	margin-top: 0px;
 	padding-bottom: 20px;
-	color: navy;
+	color: #78A9ED	;
 	font-family: Gabriola;
 }
 

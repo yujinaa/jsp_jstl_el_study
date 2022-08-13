@@ -7,6 +7,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	table {
+		margin: 0 auto;
+		border-color: blue;		
+	}
+	button {
+		background-color: #78A9ED	;
+		border: none;
+		float: right;
+		color: white;
+		width: 70px;
+		height: 35px;
+		border-radius: 4px;
+}
+</style>
 </head>
 <body>membership.jsp<br>
 	<c:import url="../default/header.jsp"/>
@@ -14,7 +29,7 @@
 	<jsp:useBean id="dao" class="com.care.root.member.dao.MemberDAO"/>
 	<c:set var="list" value = "${dao.getMemberList() }"/>              <!-- dao의 getMemberList라는 메소드 호출 -->
 	리턴 값 : ${list }
-		<table border = "1">   
+		<table border = "1" >   
 		<tr>
 			<th>아이디</th> 	<th>비밀번호</th> 	<th>이름</th> 	<th>주소</th>
 		</tr>
