@@ -10,8 +10,8 @@
 </head>
 <body>
 <c:import url="../default/header.jsp"/>
-<div class="wrap">
-	<form action="" method="post">
+<div class="wrap" style="text-align: right; margin-top: 20px;">
+	<form action="${contextPath }/login/loginChk.jsp" method="post">
 		<input type="text" name ="id" placeholder="input id"><br>
 		<input type="password" name ="pwd" placeholder="input password"><br>
 		<input type="submit" value="로그인">
