@@ -13,9 +13,7 @@
 		border-color: #FFB400;		
 		width: 700px;
 	}
-	a{
-		float: right;
-	}
+
 </style>
 </head>
 <body>
@@ -39,14 +37,16 @@
 			<c:forEach var="dto" items="${dao.list() }">
 				<tr>
 					<%--각각의 데이터값 저장하기 --%>
-					<td>{dto.id}</td>
-					<td>{dto.name}</td>
-					<td>{dto.title}</td>
-					<td>{dto.savedate}</td>
-					<td>{dto.hit}</td>
-					<td>{dto.idgroup}</td>
-					<td>{dto.step}</td>
-					<td>{dto.indent}</td>
+					<td>${dto.id}</td>
+					<td>${dto.name}</td>
+					<td>
+						<a href="#">${dto.title}</a>
+					</td>
+					<td>${dto.savedate}</td>
+					<td>${dto.hit}</td>
+					<td>${dto.idgroup}</td>
+					<td>${dto.step}</td>
+					<td>${dto.indent}</td>
 				</tr>
 			</c:forEach>
 			<tr><%--글 작성부분  --%>

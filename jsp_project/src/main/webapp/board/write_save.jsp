@@ -13,7 +13,7 @@
 	<fmt:requestEncoding value="utf-8"/>
 	
 	<jsp:useBean id="dao" class="com.care.root.board.dao.BoardDAO"/>   <!--넘어오는 값 받아서 처리  --> 
-	${dao.writeSave(param.name, param.title,param.content) }           <!-- param으로 name, title, content 3개 값을 넘겨준다 --> 
+	${dao.writeSave(param.name, param.title, param.content) }           <!-- param으로 name, title, content 3개 값을 넘겨준다 --> 
 	<c:redirect url="list.jsp"/>                                      <!-- 실행이 되면 redirect로 넘겨준다 -->
 	
 
