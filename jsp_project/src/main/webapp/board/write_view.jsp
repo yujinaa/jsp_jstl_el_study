@@ -31,7 +31,7 @@
 				</tr>
 				<tr>
 					<th>내용</th>
-					<td><textarea rows="10" cols="30"></textarea></td> <!--textarea:많은 내용이 들어오려면  -->		
+					<td><textarea rows="10" cols="40"></textarea></td> <!--textarea:많은 내용이 들어오려면  -->		
 				</tr>
 				<tr>
 					<td colspan="2"><input type="submit" value="저장" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

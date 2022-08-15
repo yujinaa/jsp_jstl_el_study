@@ -66,4 +66,27 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 	}
+	public BoardDTO contentView(String num) {
+		String sql= "select * from test_board where id=" +num; //num은 숫자형태로 만들었기 때문에 ' '가 필요없다
+		BoardDTO dto= new BoardDTO();
+		try {
+			ps = con.prepareStatement(sql);
+			rs= ps.executeQuery();   //db로부터 데이터베이스 가져오고
+			while(rs.next()) {//그 데이터가 있다면   (if, while 둘 중에 아무거나 써도된다)
+				dto.setId(rs.getInt("id"));//dto에 저장한다
+				dto.setName(rs.getString("name"));
+				dto.setTitle(rs.getString("title"));
+				dto.setContent(rs.getString("content"));
+				
+				dto.setSavedate(rs.getTimestamp("savedata"));
+				dto.setHit(rs.getInt("hit"));
+				dto.setIdgroup(rs.getInt("idgroup"));
+				dto.setStep(rs.getInt("step"));
+				dto.setIndent(rs.getInt("indent"));
+			}
+		} catch ( Exception e) {
+			e.printStackTrace();
+		}
+		return dto;
+}
 }
