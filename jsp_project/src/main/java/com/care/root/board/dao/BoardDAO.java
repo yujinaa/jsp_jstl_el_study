@@ -118,13 +118,15 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 	}
-	public void delete(String id) {
+	public int delete(String id) {
 		String sql = "delete from test_board where id="+id;
+		int result=0;
 		try {
 			ps = con.prepareStatement(sql);
-			ps.executeUpdate();
+			result=ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		return result;
 	}
 }

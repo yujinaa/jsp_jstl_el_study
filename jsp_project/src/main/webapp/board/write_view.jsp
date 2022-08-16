@@ -26,7 +26,7 @@ table {
 
 				<tr>
 					<th>번호</th>
-					<td>${dto.id }></td>
+					<td>${dto.id }</td>
 				</tr>
 
 				<tr>
@@ -55,7 +55,7 @@ table {
 
 			</table>
 		</form>
-
+</div>
 		<c:import url="../default/footer.jsp" />
 </body>
 </html>
