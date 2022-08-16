@@ -8,39 +8,54 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-	table{
-		margin: auto;
-		border-color: #557DE1;
-		border-radius: 3px;
-	}
+table {
+	margin: auto;
+	border-color: #557DE1;
+	border-radius: 3px;
+}
 </style>
 </head>
 <body>
 	<c:import url="../default/header.jsp" />
-	<div class="wrap" style="margin-top: 20px; " >
+	<div class="wrap" style="margin-top: 20px">
+
 		<!-- 넘겨주기 위해 form태그로 만들었다. -->
-		<form action="${contextPath }/board/write_save.jsp" method="post">
+		<form action="modify.jsp" method="post">
+			<input type="hidden" name="id" value="${dto.id }">
 			<table border="1">
+
+				<tr>
+					<th>번호</th>
+					<td>${dto.id }></td>
+				</tr>
+
+				<tr>
+					<th>조회수</th>
+					<td>${dto.hit }</td>
+				</tr>
+
 				<tr>
 					<th>이름</th>
-					<td><input type="text" name="name"></td> 
+					<td><input type="text" name="name" value="${dto.name }"></td>
 				</tr>
+
 				<tr>
 					<th>제목</th>
-					<td><input type="text" name="title"></td>
+					<td><input type="text" name="title" value="${dto.title }"></td>
 				</tr>
+
 				<tr>
 					<th>내용</th>
-					<td><textarea rows="10" cols="40"></textarea></td> <!--textarea:많은 내용이 들어오려면  -->		
+					<td><textarea rows="10" cols="30" name="content"></textarea></td>
 				</tr>
+
 				<tr>
-					<td colspan="2"><input type="submit" value="저장" >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<a href="list.jsp">목록이동</a>
-					</td>
+					<td colspan="2"></td>
 				</tr>
+
 			</table>
 		</form>
-	</div>
-	<c:import url="../default/footer.jsp" />
+
+		<c:import url="../default/footer.jsp" />
 </body>
 </html>

@@ -7,10 +7,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+table {
+	margin: auto;
+	border-color: #557DE1;
+	border-radius: 3px;
+}
+</style>
 </head>
 <body>
 	<c:import url="../default/header.jsp" />
-	<div class="wrap">
+	<div class="wrap" style="margin-top: 20px;">
 		<jsp:useBean id="dao" class="com.care.root.board.dao.BoardDAO" />
 		<c:set var="dto" value="${dao.contentView(param.id) }" />
 		<%--데이터 얻어오기 , 이러고 DAO에 contentView만들기--%>
@@ -45,7 +52,12 @@
 				</tr>
 
 				<tr>
-					<td colspan="2"></td>
+					<td colspan="2">
+					<input type="submit" value="수정">&nbsp; &nbsp;
+					<a href="list.jsp">목록이동</a>&nbsp; &nbsp;
+					<a href="#">삭제</a>&nbsp; &nbsp;
+					<a href="#">답변</a>
+					</td>
 				</tr>
 
 			</table>
