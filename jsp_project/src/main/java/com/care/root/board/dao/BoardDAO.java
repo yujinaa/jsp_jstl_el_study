@@ -68,15 +68,16 @@ public class BoardDAO {
 	}
 
 	//조회수 증가시키기
-	public void upHit(String num) {
-		String sql = "update test_board set hit= hit+1 where id = "+num;
+	private void upHit(String num) {    
+		String sql = "update test_board set hit=hit+1 where id="+num;
 		try {
 			ps = con.prepareStatement(sql);
-			ps.executeUpdate();//select를 제외한 나머지는 update로 처리한다.
+			ps.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
+	
 	public BoardDTO contentView(String num) {
 
 		upHit(num);

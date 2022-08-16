@@ -40,7 +40,8 @@
 					<td>${dto.id}</td>
 					<td>${dto.name}</td>
 					<td>
-						<a href="content_view.jsp?id=${dto.id }">${dto.title}</a>
+					<a href="content_view.jsp?id=${dto.id }">${dto.title}</a>
+						
 					</td>
 					<td>${dto.savedate}</td>
 					<td>${dto.hit}</td>

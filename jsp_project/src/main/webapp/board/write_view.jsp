@@ -20,42 +20,31 @@ table {
 	<div class="wrap" style="margin-top: 20px">
 
 		<!-- 넘겨주기 위해 form태그로 만들었다. -->
-		<form action="modify.jsp" method="post">
-			<input type="hidden" name="id" value="${dto.id }">
-			<table border="1">
-
-				<tr>
-					<th>번호</th>
-					<td>${dto.id }</td>
-				</tr>
-
-				<tr>
-					<th>조회수</th>
-					<td>${dto.hit }</td>
-				</tr>
-
-				<tr>
-					<th>이름</th>
-					<td><input type="text" name="name" value="${dto.name }"></td>
-				</tr>
-
-				<tr>
-					<th>제목</th>
-					<td><input type="text" name="title" value="${dto.title }"></td>
-				</tr>
-
-				<tr>
-					<th>내용</th>
-					<td><textarea rows="10" cols="30" name="content"></textarea></td>
-				</tr>
-
-				<tr>
-					<td colspan="2"></td>
-				</tr>
-
-			</table>
-		</form>
-</div>
-		<c:import url="../default/footer.jsp" />
+		<form action="${contextPath }/board/write_save.jsp"method="post">
+	<table border="1">
+		<tr>
+			<th>이름</th> 
+			<td><input type="text" name="name"> </td>   
+		</tr>
+		<tr>
+			<th>제목</th> 
+			<td><input type="text" name="title"></td>
+		</tr>
+		<tr>
+			<th>내용</th>
+			 <td><textarea rows="10" cols="30"></textarea></td>  
+		</tr>
+		<tr>
+			<td colspan="2">
+				<input type="submit" value="저장">&nbsp;&nbsp;
+				<a href="list.jsp">목록이동</a>
+			
+			</td>
+		</tr>
+	</table>
+</form>
+		
+	</div>
+	<c:import url="../default/footer.jsp" />
 </body>
 </html>

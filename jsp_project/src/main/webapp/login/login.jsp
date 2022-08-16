@@ -18,7 +18,7 @@
 		<input type="text" name ="id" placeholder="input id"><br>
 		<input type="password" name ="pwd" placeholder="input password"><br>
 		<input type="submit" value="로그인">
-		<a hrdf="${contextPath }/member/member_register.jsp">회원가입</a>
+		<a href="${contextPath }/member/member_register.jsp">회원가입</a>
 	</form>
 	</c:when>
 	<c:otherwise>
