@@ -17,7 +17,7 @@ public class BoardDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이브 로드 성공");
 			con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:xe", "dbwls", "dbwls9874");
+					"jdbc:oracle:thin:@localhost:1521:xe", "id", "pwd");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -92,7 +92,7 @@ public class BoardDAO {
 				dto.setTitle(rs.getString("title"));
 				dto.setContent(rs.getString("content"));
 
-				dto.setSavedate(rs.getTimestamp("savedata"));
+				dto.setSavedate(rs.getTimestamp("savedate"));
 				dto.setHit(rs.getInt("hit"));
 				dto.setIdgroup(rs.getInt("idgroup"));
 				dto.setStep(rs.getInt("step"));
@@ -102,5 +102,20 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return dto;
+	}
+	
+	//수정하기
+	public void modify(String id, String name, String title, String content) {
+		String sql = "update test_board set name=?, title=?, content=? where id=?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setString(1, name);
+			ps.setString(2, title);
+			ps.setString(3, content);
+			ps.setString(4, id);
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
