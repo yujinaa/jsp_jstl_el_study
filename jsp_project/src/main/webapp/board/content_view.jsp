@@ -16,14 +16,14 @@ table {
 </style>
 </head>
 <body>
-				<script>
-					function del(){
-						var re = confirm("정말로 삭제???")
-						if(re){
-							location.href="delete.jsp?id=${param.id }"
-						}
-					}
-				</script>
+	<script>
+		function del() {
+			var re = confirm("정말로 삭제???")
+			if (re) {
+				location.href = "delete.jsp?id=${param.id }"
+			}
+		}
+	</script>
 	<c:import url="../default/header.jsp" />
 	<div class="wrap" style="margin-top: 20px;">
 		<jsp:useBean id="dao" class="com.care.root.board.dao.BoardDAO" />
@@ -31,7 +31,8 @@ table {
 		<%--데이터 얻어오기 , 이러고 DAO에 contentView만들기--%>
 
 		<form action="modify.jsp" method="post">
-			<input type="hidden" name="id" value="${dto.id }"> <!-- hidden, readonly 둘다가능 -->
+			<input type="hidden" name="id" value="${dto.id }">
+			<!-- hidden, readonly 둘다가능 -->
 			<table border="1">
 
 				<tr>
@@ -58,15 +59,12 @@ table {
 					<th>내용</th>
 					<td><textarea rows="10" cols="30" name="content"></textarea></td>
 				</tr>
-				
-				
+
+
 				<tr>
-					<td colspan="2">
-					<input type="submit" value="수정">&nbsp; &nbsp;
-					<a href="list.jsp">목록이동</a>&nbsp; &nbsp;
-					<a href="" onclick="del()">삭제</a>&nbsp; &nbsp;
-					<a href="#">답변</a>
-					</td>
+					<td colspan="2"><input type="submit" value="수정">&nbsp;
+						&nbsp; <a href="list.jsp">목록이동</a>&nbsp; &nbsp; <a href=""
+						onclick="del()">삭제</a>&nbsp; &nbsp; <a href="#">답변</a></td>
 				</tr>
 
 			</table>
