@@ -23,7 +23,7 @@ table {
 		<%--데이터 얻어오기 , 이러고 DAO에 contentView만들기--%>
 
 		<form action="modify.jsp" method="post">
-			<input type="hidden" name="id" value="${dto.id }">
+			<input type="hidden" name="id" value="${dto.id }"> <!-- hidden, readonly 둘다가능 -->
 			<table border="1">
 
 				<tr>
@@ -55,7 +55,7 @@ table {
 					<td colspan="2">
 					<input type="submit" value="수정">&nbsp; &nbsp;
 					<a href="list.jsp">목록이동</a>&nbsp; &nbsp;
-					<a href="#">삭제</a>&nbsp; &nbsp;
+					<a href="delete.jsp?id=${dto.id}">삭제</a>&nbsp; &nbsp;
 					<a href="#">답변</a>
 					</td>
 				</tr>
