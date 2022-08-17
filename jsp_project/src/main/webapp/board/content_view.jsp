@@ -18,7 +18,7 @@ table {
 <body>
 	<script>
 		function del() {
-			var re = confirm("정말로 삭제???")
+			var re = confirm("정말로 삭제하시겠습니까???")
 			if (re) {
 				location.href = "delete.jsp?id=${param.id }"
 			}
@@ -27,7 +27,7 @@ table {
 	<c:import url="../default/header.jsp" />
 	<div class="wrap" style="margin-top: 20px;">
 		<jsp:useBean id="dao" class="com.care.root.board.dao.BoardDAO" />
-		<c:set var="dto" value="${dao.contentView(param.id) }" />
+		<c:set var="dto" value="${dao.contentView(param.id, 0) }"/> 
 		<%--데이터 얻어오기 , 이러고 DAO에 contentView만들기--%>
 
 		<form action="modify.jsp" method="post">
@@ -62,14 +62,17 @@ table {
 
 
 				<tr>
-					<td colspan="2"><input type="submit" value="수정">&nbsp;
-						&nbsp; <a href="list.jsp">목록이동</a>&nbsp; &nbsp; <a href=""
-						onclick="del()">삭제</a>&nbsp; &nbsp; <a href="#">답변</a></td>
+					<td colspan="2">
+						<input type="submit" value="수정">&nbsp;
+							&nbsp; 
+						<a href="list.jsp">목록이동</a>&nbsp; &nbsp; 
+						<a href="#"	onclick="del()">삭제</a>&nbsp; &nbsp; 
+						<a href="reply_view.jsp?id=${dto.id }">답변</a>
+					</td>
 				</tr>
 
 			</table>
 		</form>
-
 	</div>
 	<c:import url="../default/footer.jsp" />
 </body>

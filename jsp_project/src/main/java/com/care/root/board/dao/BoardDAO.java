@@ -17,7 +17,7 @@ public class BoardDAO {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("드라이브 로드 성공");
 			con = DriverManager.getConnection(
-					"jdbc:oracle:thin:@localhost:1521:xe", "dbwls", "dbwls9874");
+					"jdbc:oracle:thin:@localhost:1521:xe", "id", "pwd");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -78,9 +78,9 @@ public class BoardDAO {
 		}
 	}
 	
-	public BoardDTO contentView(String num) {
-
-		upHit(num);
+	public BoardDTO contentView(String num, int flag) {
+		if(flag==1)
+			upHit(num);
 
 		String sql= "select * from test_board where id=" +num; //num은 숫자형태로 만들었기 때문에 ' '가 필요없다
 		BoardDTO dto= new BoardDTO();
@@ -129,5 +129,26 @@ public class BoardDAO {
 			e.printStackTrace();
 		}
 		return result;
+	}
+	//답글쓰기
+	public void reply(BoardDTO dto) {
+		String sql=
+				"insert into test_board(id, name, title, content, idgroup,step, indent)"
+				+"values(test_board_seq.nextval,?,?,?,?,?,?)";
+		try {           //db로 전송
+			ps = con.prepareStatement(sql);
+			ps.setString(1, dto.getName()); //순서지정
+			ps.setString(2, dto.getTitle());
+			ps.setString(3, dto.getContent());
+			
+			ps.setInt(4, dto.getIdgroup());
+			ps.setInt(5, dto.getStep()+1); //
+			ps.setInt(6, dto.getIndent()+1);
+			
+			ps.executeUpdate();  //이게 있어야 실행됨
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 }
