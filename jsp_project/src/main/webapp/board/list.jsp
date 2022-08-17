@@ -21,6 +21,8 @@
 	<c:import url="../default/header.jsp" />
 	<div class="wrap" style="margin-top: 20px; ">
 		<jsp:useBean id="dao" class="com.care.root.board.dao.BoardDAO" />
+		<c:set var = "pc" value = "${dao.pagingNum(param.start) }"/>  <!--사용자가 list요청하면 dao에 있는 pagingNum메소드를 호출하는데 param.start            
+	                                                                        가져간다  -->
 		<table border="1">
 			<tr>
 				<th>번호</th>
