@@ -36,7 +36,7 @@
 			</tr>
 
 			<%--데이터얻어오기 --%>
-			<c:forEach var="dto" items="${dao.list() }">
+			<c:forEach var="dto" items="${dao.list(pc.startPage, pc.endPage) }">
 				<tr>
 					<%--각각의 데이터값 저장하기 --%>
 					<td>${dto.id}</td>
