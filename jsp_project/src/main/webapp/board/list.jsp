@@ -71,8 +71,13 @@
 				<c:otherwise>
 					<button type="button" disabled>이전</button>  <%--그게 아니라면 이전으로 갈 수 없다 : disabled --%>
 				</c:otherwise>
-			</c:choose>
+			</c:choose> 
 			
+					<%--넘버링 --%>
+					<c:forEach var="cnt" begin="1" end="${pc.totEndPage }" step="1"> <!-- 1씩 증가시키기 -->
+						<a href="list.jsp?start=${cnt }">[${cnt }]</a>
+					</c:forEach> 
+					
 			<c:choose>
 				<c:when test="${start<pc.totEndPage }"> <%--start값이 토탈페이지보다 작아야한다 --%>
 					<button type="button" onclick=
