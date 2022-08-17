@@ -55,6 +55,23 @@
 			</c:forEach>
 			<tr><%--글 작성부분  --%>
 				<td colspan="8">
+			<c:choose>
+				<c:when test="${param.start == null }">  <%--param값이 null이라면 --%>
+					<c:set var = "start" value="1"/>      <%--start에 1을 넣어준다 --%>
+				</c:when>
+				<c:otherwise>                             <%--그게 아니라면 --%>
+					<c:set var = "start" value = "${param.start }"/>  <%--1을 넣어준다 --%>
+				</c:otherwise>
+			</c:choose>
+			<c:choose>
+				<c:when test="${start>1 }">    <%--이전버튼 만들기, start값이 1보다 크면 이전으로 갈 수 있다 --%>
+					<button type="button" onclick=
+						"location.href = 'list.jsp?start=${start-1}'">이전</button> 
+				</c:when>
+				<c:otherwise>
+					<button type="button" disabled>이전</button>  <%--그게 아니라면 이전으로 갈 수 없다 : disabled --%>
+				</c:otherwise>
+			</c:choose>
 					<a href="write_view.jsp">글작성</a>
 				</td>
 			</tr>
