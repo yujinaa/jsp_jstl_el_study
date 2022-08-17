@@ -24,7 +24,10 @@ public class BoardDAO {
 	}
 	//list메소드 작성
 	public ArrayList<BoardDTO> list(){
-		String sql = "select * from test_board";
+//		String sql = "select * from test_board";
+		
+		//정렬하기
+		String sql = "select * from test_board order by idgroup desc,step asc"; //desc :내림차순
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		try { //db접근 위해 예외처리 후 , 객체를 만들어서 각각의 값들 실행하기
 			ps = con.prepareStatement(sql);
@@ -142,7 +145,7 @@ public class BoardDAO {
 			ps.setString(3, dto.getContent());
 			
 			ps.setInt(4, dto.getIdgroup());
-			ps.setInt(5, dto.getStep()+1); //
+			ps.setInt(5, dto.getStep()+1); //+1을 해준이유이다. step은 답변에 대한 위치를 지정하기 위한것
 			ps.setInt(6, dto.getIndent()+1);
 			
 			ps.executeUpdate();  //이게 있어야 실행됨

@@ -26,8 +26,8 @@
 		<tr> <th>이름</th> <td>${dto.name }</td> </tr>
 		<tr> 
 			<th>제목</th> 
-			<td>${dto.title }</td>
-			<!-- <td><input type="text" name="title" value="${dto.title }"> </td>  제목바꾸고 싶으면 이렇게 -->
+			<!--<td>${dto.title }</td>  -->
+			<td><input type="text" name="title" value="${dto.title }"> </td>  <!-- 제목바꾸고 싶으면 이렇게 -->
 		</tr>
 		<tr>
 			<th>내용</th> <td><textarea rows="10" cols="30" name="content"></textarea> </td>
