@@ -134,6 +134,7 @@ public class BoardDAO {
 		return result;
 	}
 	//step맞추기(오름차순이라 최신글이 낮은 숫자로 위쪽에 위치, 나중에 쓴 글이 높은 숫자로 아래위치)
+	//step으로 같은 그룹에 대한 위치잡기
 	private void replyShape(BoardDTO dto) {
 		String sql="update test_board set step =step+1 where idgroup=? and step >?";
 		try {
