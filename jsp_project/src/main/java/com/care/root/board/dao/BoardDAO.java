@@ -27,7 +27,7 @@ public class BoardDAO {
 //		String sql = "select * from test_board";
 		
 		//정렬하기
-		String sql = "select * from test_board order by idgroup desc,step asc"; //desc :내림차순
+		String sql = "select * from test_board order by idgroup desc,step asc"; //desc :내림차순,asc:오름차순
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		try { //db접근 위해 예외처리 후 , 객체를 만들어서 각각의 값들 실행하기
 			ps = con.prepareStatement(sql);
