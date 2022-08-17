@@ -40,7 +40,7 @@
 					<td>${dto.id}</td>
 					<td>${dto.name}</td>
 					<td>
-					<c:forEach begin="1" end="${dto.indent }"></c:forEach> <!-- 1부터 시작하고 indent만큼 반복 -->
+					<c:forEach begin="1" end="${dto.indent }">-></c:forEach> <!-- 1부터 시작하고 indent만큼 반복 -->
 					<a href="content_view.jsp?id=${dto.id }">${dto.title}</a>
 						
 					</td>
