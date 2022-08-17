@@ -25,9 +25,15 @@ public class BoardDAO {
 	//list메소드 작성
 	public ArrayList<BoardDTO> list(){
 //		String sql = "select * from test_board";
+		String sql= "select B.* from(select rownum rn, A.* from"
+				+ "(select * from test_board order by idgroup desc)A)B where rn between 3 and 5";
+		//내림차순으로 정렬한 값 ( ) 을 A라고 쓰겠다. 
+		//rownum을 rn 별칭으로 표현하고 A에대한 모든값을 표현하는데 그걸 B라고 표현하겠다
+		//B에 대한 모든 값 중에서 rn에 대해 3과 5사이에 있는 값을 가지고와라
+
 		
 		//정렬하기
-		String sql = "select * from test_board order by idgroup desc,step asc"; //desc :내림차순,asc:오름차순
+		//String sql = "select * from test_board order by idgroup desc,step asc"; //desc :내림차순,asc:오름차순
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		try { //db접근 위해 예외처리 후 , 객체를 만들어서 각각의 값들 실행하기
 			ps = con.prepareStatement(sql);
