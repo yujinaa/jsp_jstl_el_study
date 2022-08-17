@@ -133,8 +133,23 @@ public class BoardDAO {
 		}
 		return result;
 	}
+	//step맞추기(오름차순이라 최신글이 낮은 숫자로 위쪽에 위치, 나중에 쓴 글이 높은 숫자로 아래위치)
+	private void replyShape(BoardDTO dto) {
+		String sql="update test_board set step =step+1 where idgroup=? and step >?";
+		try {
+			ps=con.prepareStatement(sql);
+			ps.setInt(1, dto.getIdgroup());
+			ps.setInt(2, dto.getStep());
+			
+			ps.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		}
+	
 	//답글쓰기
 	public void reply(BoardDTO dto) {
+		replyShape(dto);
 		String sql=
 				"insert into test_board(id, name, title, content, idgroup,step, indent)"
 				+"values(test_board_seq.nextval,?,?,?,?,?,?)";

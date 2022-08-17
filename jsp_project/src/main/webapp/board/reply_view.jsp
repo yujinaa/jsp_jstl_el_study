@@ -19,6 +19,7 @@
 	<input type="hidden" name="idgroup" value="${dto.idgroup }">
 	<input type="hidden" name="step" value="${dto.step }">
 	<input type="hidden" name="name" value="${dto.name }">
+	<input type="hidden" name="indent" value="${dto.indent }">
 	
 		<table border="1">    <%--사용자에게 보여질 테이블 만들기 --%>
 		<tr> <th>번호</th> <td>${dto.id }</td> </tr>
