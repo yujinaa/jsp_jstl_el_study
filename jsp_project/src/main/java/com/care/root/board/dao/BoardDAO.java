@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import com.care.root.board.dto.BoardDTO;
+import com.care.root.paging.PageCount;
 
 public class BoardDAO {
 	Connection con;
@@ -23,10 +24,10 @@ public class BoardDAO {
 		}
 	}
 	//list메소드 작성
-	public ArrayList<BoardDTO> list(){
+	public ArrayList<BoardDTO> list(int start, int end){
 //		String sql = "select * from test_board";
 		String sql= "select B.* from(select rownum rn, A.* from"
-				+ "(select * from test_board order by idgroup desc)A)B where rn between 3 and 5";
+				+ "(select * from test_board order by idgroup desc)A)B where rn between ? and ?";
 		//내림차순으로 정렬한 값 ( ) 을 A라고 쓰겠다. 
 		//rownum을 rn 별칭으로 표현하고 A에대한 모든값을 표현하는데 그걸 B라고 표현하겠다
 		//B에 대한 모든 값 중에서 rn에 대해 3과 5사이에 있는 값을 가지고와라
@@ -37,6 +38,8 @@ public class BoardDAO {
 		ArrayList<BoardDTO> list = new ArrayList<BoardDTO>();
 		try { //db접근 위해 예외처리 후 , 객체를 만들어서 각각의 값들 실행하기
 			ps = con.prepareStatement(sql);
+			ps.setInt(1, start);
+			ps.setInt(2, end);
 			rs=ps.executeQuery();
 			while(rs.next()) {         //데이터 얻어오기 코드
 				BoardDTO dto = new BoardDTO();
@@ -176,4 +179,44 @@ public class BoardDAO {
 		}
 
 	}
+	//글에 대한 총 갯수를 얻어오는 메소드 
+	public int getTotalPage() {
+		String sql = "select count(*) from test_board"; //> 글의 개수만큼 전체 count를 가지고와라
+		int totalPage = 0;
+		try {
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery();
+			if(rs.next()) {
+				totalPage= rs.getInt(1); //꼭 1이라고 써야 결과값(전체 글 개수:  totalPage)을 제대로 가지고온다
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return totalPage;
+	}
+	
+	//연산해주는 메소드
+	public PageCount pagingNum(int start) {
+		PageCount pc = new PageCount();
+		if(start==0) start=1;                       //처음 start값은 넘겨주는 게 없기 때문에 0으로 한다. start = 1 : 페이지 시작번호
+		                                            //즉, 스타트 값이 0으로 없다면 첫 번째 페이지를 보여줘라
+		
+		int pageNum=3;                              //한 페이지에 3개씩 보여주겠다
+		int totalPage = getTotalPage();         //글에 대한 총 개수 얻어오기
+		
+		
+		int totEndPage = totalPage/pageNum;
+		if(totalPage % pageNum !=0) {         //글 갯수가 홀수라면 
+			totEndPage = totEndPage +1;     //남는수에 +1을 해서 페이지 수를 맞춰서 늘린다
+		}
+		
+		int endPage = start * pageNum;              //끝 번호 만들기, 이 코드 2줄이 위의 쿼리문의 ?,?에 들어가는 값이 된다
+		int startPage = endPage +1 - pageNum;  //시작 값 만들기
+		
+		pc.setTotEndPage(totEndPage);  //값들 저장하기
+		pc.setStartPage(startPage);
+		pc.setEndPage(endPage);
+		return pc;
+	}
+
 }
