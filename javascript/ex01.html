@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<!-- 외부파일 가져다 쓰기 : script의 src속성으로 연결 -->
+<script src ="test.js"></script>
+
+<!--
+	• var : '변수'를 만들때 붙여서 사용 (없어도 상관은 없다)
+	• ; 은 한줄만 쓰면 생략가능, 여러줄을 쓴다면 ; 을 써줘야한다
+	• document : 현재 페이지.  write는 써주겠다. 즉, 현재 페이지에 어떤 내용을 쓰겠다
+	• ' ', " " 모두 같이 쓸 수 있다
+	• html도 사용가능하다
+-->
+
+<script type="text/javascript">
+	var num = 1234
+	document.write('num 출력 : ' +num +"<hr>")
+	document.write('<span style="color:red;"> num 출력</span> : ' +num +"<hr>")
+	
+/*
+	//함수만들기 : 메소드 만들 때 함수 function 사용
+	function test(){
+		alert('경고창')
+		//if문도 사용가능
+	}
+*/
+</script>
+</head>
+<body>
+		<button type = "button" onclick="test()">버어튼</button>   <!--  버튼만 만들경우 동작은 하지 않는다 -->
+</body>
+</html>
