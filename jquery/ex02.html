@@ -7,6 +7,9 @@
 <script type="text/javascript">
 	var n = 0;
 	$(document).ready(function(){
+		
+		//마우스 이벤트
+		//1.마우스 들어오고 나갈때 (mouseenter, mouseleave)
 		$("div.out").mouseenter(function(){
 			$("p").first().text("마우스 포인트 들어와요")
 			$("p").last().text(++n)
@@ -14,6 +17,17 @@
 		$("div.out").mouseleave(function(){
 			$("p").first().text("마우스 포인트 나가요")
 			$("p").last().text("최종 횟수 : " + n)
+		})
+		
+		//2.마우스 눌렀다 뗄 때
+		$("div.out").mousedown(function(){ //마우스 누르면(클릭하면)
+			$("p").first().hide()
+			$("p").last().text("메시지 사라짐")
+		})
+		
+		$("div.out").mouseup(function(){//마우스 떼면
+			$("p").first().show()
+			$("p").last().text("최종 횟수 : " + n )
 		})
 	})
 </script>
