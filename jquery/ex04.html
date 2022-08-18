@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = 'jquery-3.6.0.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		
+		//이미지 이용해 css 직접적으로 적용하기  , css : 단편적으로 값을 빡!하고 만든다
+		$("button.b1").click(function(){
+			//$("img").css({ width : '100px', height:'100px' })   -> 여러개 적용시 ,사용
+			//$("img").css({ width : '100px' })  //img태그에 css적용
+			
+				
+		//animate : 차근차근 수치를 만들어간다. 부드러운 효과
+			$("img").animate({ width : '100px' })
+		})
+		$("button.b2").click(function(){
+			$("img").css({ width : '200px' })
+		})
+		$("button.b3").click(function(){
+			$("img").css({ width : '300px' })
+		})
+	})
+</script>
+<style type="text/css">
+	.css_pic { height: 430px;}
+	.css_pic img { width: 250px;}
+</style>
+</head>
+<body>
+	<div class = "css_pic">
+		<button class = "b1">100픽셀</button>
+		<button class = "b2">200픽셀</button>
+		<button class = "b3">300픽셀</button><hr>
+		<img name = "pic1" src = "resources/images/car01.png">
+	</div>
+</body>
+</html>

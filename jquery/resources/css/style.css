@@ -1,0 +1,39 @@
+*{ margin: 0;}
+.wrap{ width: 1900px; margin: 0 auto; }
+a.logo img{ width: 130px; height: 50px; margin-top: 10px;}
+
+nav{ width: 1900px; height: 70px; background-color: #000; position: fixed;}
+nav ul{ list-style: none; display: flex;}
+nav ul li{ margin: 0 3px; padding: 8px 15px;  margin-top:  10px;}
+nav ul li a { text-decoration: none; color : #fff;}
+nav ul li a:hover{ color: orange; padding-bottom: 3px; 
+					border-bottom: 1px solid orange; transition : all 0.25s;}
+.nav-wrap { display: flex; justify-content: space-between;}
+
+.back-image1{ background-image: url("../images/image-back.jfif");
+				background-size:  1900px 1080px;}
+				
+.back-image2{ background-image: url("../images/car01.png");
+				background-size:  1900px 1080px;}
+
+.back-image3{ background-image: url("../images/car02.png");
+				background-size:  1900px 1080px;}
+				
+.back-image4{ background-image: url("../images/car03.png");
+				background-size:  1900px 1080px;}
+				
+.full-page{ height: 1080px; }
+
+.title{ padding: 100px 0 0 200px; color : #fff;
+		text-shadow:  10px 10px 15px white; font-size:  70px;}
+		
+.inner{ margin: 0 auto; height: 500px; width: 1000px; background-color: rgba(255,255,255, .8);
+		color : black;}	
+#fourth form { margin: auto; width: 70%; }
+#fourth form label { width:  120px; display: inline-block; padding: 7px 0; vertical-align: top; }
+#fourth form input{ border-radius:  5px; height: 25px; width: 50%; border: 1px solid gray; }
+#fourth form textarea { border-radius: 5ps;  width: 70%; height: 100px; }
+#fourth form button { margin-left: 130px; padding: 10px 20px; border-radius: 5px; 
+					background-color: skyblue; color : blue;}
+#fourth form button:active {border-radius: 30px;
+						background-color:  olive; }
