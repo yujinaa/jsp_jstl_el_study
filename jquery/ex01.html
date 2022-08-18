@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<!-- 	제이쿼리는 $로 시작한다. -->
+
+<script src = 'jquery-3.6.0.min.js'></script>  <!-- 방법1.제이쿼리 사용을 위해선 외부에서 기능을 가져와야한다. -->
+<!--<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 방법2.  -->
+<script type="text/javascript">
+
+	//이벤트 처리를 위한것
+	//실행 방법1.
+	$(document).ready(function(){   //현재 페이지에 대해서(document) 준비해라(ready). 함수를. 
+		//여기서 내용 실행
+		console.log('11')
+	})
+	
+	//실행 방법2. 도큐먼트 생략
+		$().ready(function(){
+			console.log('22')
+		})
+		
+	//실행 방법3.
+		$(function(){
+			console.log('33')
+			$("button").click(function(){   //()안에 .과 # 가능하고 이름만쓰면 태그  //버튼 클릭하면 함수실행 
+				//$("p").hide()       
+			})
+			 $("#show").click(function(){    //id는 #을 사용
+		            $("p").show()
+		        })
+		})
+		
+		function my_show(){
+		$("p").hide()              //p 태그 감춰라
+	}
+</script>
+</head>
+<body>
+	<p>안녕</p>
+	<button onclick="my_show()">클릭</button>   <!-- onclick하면 my_show호출 -->
+	<button id="show">보임</button>
+</body>
+</html>
