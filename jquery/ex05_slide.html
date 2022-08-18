@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	//slide
+	 //노란 panel클릭하면 빠르게 업해라
+	$("#panel").click(function(){ 
+		$("#panel").slideUp("fast"); 
+	})  
+	
+	 //slide를 클릭하면 5초안에 펼쳐라
+	$("#slide").click(function(){ 
+		$("#panel").slideDown(5000); //5초
+	})  
+	//토글 슬라이드 클릭,다시 클릭하면 올라갔다 내려가기
+	$("#flip").click(function(){ 
+		$("#panel").slideToggle("slow"); 
+	})
+	 //버튼누르면 무조건 멈추기
+	$("#stop").click(function(){ $("#panel").stop(); })               
+})
+</script>
+<style type="text/css">
+	#slide, #panel, #flip { padding: 5px; text-align: center; background-color:  gray; border : 1px solid block; }
+	#panel { padding:  70px;  background-color: #ffff00;}
+</style>
+</head>
+<body>
+	<div id="slide">[오늘의 공지사항]</div>
+	<div id="panel">
+		오늘 정말 덥죠?<br>
+		더위 조심하세요
+	</div>
+	<div id="flip">toggle slide</div>
+	<button id="stop">stop slide</button>
+</body>
+</html>
