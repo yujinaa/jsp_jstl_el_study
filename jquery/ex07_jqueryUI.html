@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	.drag{
+		width: 200px; height: 100px; padding: 0.5em;
+		background-color: red; border-style: solid;
+	}
+</style>
+<script src="jquery-3.6.0.min.js"></script>  <!-- ui읽으려면 min.js를 먼저 적어야한다. -->
+<script src="jquery-1.12.1-ui.js"></script>
+<script type="text/javascript">
+	$(function(){ $("#draggable").draggable() })
+</script>
+
+</head>
+<body>
+	<div class="drag" id="draggable">
+		<p>Drag me around</p>
+	</div>
+</body>
+</html>
