@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src = 'jquery-3.6.0.min.js'></script>
+<script type="text/javascript">
+	$(function(){
+		$("button.add").click(function(){           //button의 add 태그에 대해 click이 일어나면
+				$("h1, p, div").addClass("blue")      //"h1, p, div" 태그에 대해서  class를 추가(add)해라
+			})
+			$(".remove").click(function(){
+				$("h1,p").removeClass("blue")
+			})
+	})
+</script>
+<style type="text/css">
+	.blue { color : blue; }               <!--  add 클릭이 일어나면 <h1>,<div>태그에 대해 색을 blue로 주겠다  -->
+</style>
+</head>
+<body>
+		<h1>test</h1> <p>test</p>  <div>test</div>
+	<button class= "add">add</button>                  <!-- add 클릭이 일어나면 <h1>,<div>태그에 대해  -->
+	<button class= "remove">remove</button>
+	
+</body>
+</html>
