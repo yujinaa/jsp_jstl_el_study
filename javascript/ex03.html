@@ -35,5 +35,38 @@
 밖에서만든 var변수는 전역변수라 function구역에서도 사용가능하다
 */
 </script>
+
+<!-- 리턴값주기 -->
+<script type="text/javascript">
+	function getReturn(){                 //함수를 만들었을 때 반환타입이없다
+		var kor = 999;
+		return kor;
+	}
+	reKor = getReturn()
+	document.write("리턴 : " +reKor)
+	
+	//매개변수 주기
+	function printFC(msg){
+		document.write(msg)
+	}
+	var m = "<hr> 안녕하세요<hr>"
+	printFC(m)
+	
+			
+		function printFC02(a,b,c,d){
+			document.write(a)
+			document.write(b==undefined)    //값 확인할 때 undefined
+			
+			//	• 내장객체 중  arguments : 예를들어 (a,b,c,d)로 들어오는 매개변수를 담고있는 여기서 제공하는 객체
+			document.write("arguments size : " +arguments.length)    //(a,b,c,d)에 구애되지 않고, 아규먼트 값이 바로 나옴
+			
+			// 배열 형태가 가능하다 : index로 표현 가능
+			for(i=0 ; i<arguments.length ; i++)
+				document.write("<hr>"+ arguments[i] +"<hr>")
+
+		}
+		var m = "<hr>222안녕하세요222<hr>"  //-> 넘겨주는 값만큼 처리가되고, 순차적으로 들어가는데 없어도 동작은 한다
+		printFC02(m,1,2,3,5)               // 값을 넘기면 개수만큼 arguments값이 출력된다(5)
+</script>
 </body>
 </html>
