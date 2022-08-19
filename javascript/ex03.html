@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- 
+지역변수 vs 전역변수
+
+		let :   함수 안에서만 사용할 수 있으며, let kor 다시 선언은 안된다
+			     사용하고자 하는 변수이름만 사용해서 써야한다
+		var :  전역변수 설정이나 지역변수 설정이 가능하다. 변수의 재 선언이 가능하다
+			     키워드 없음 : 함수 안에서 전역변수로 동작시킬 수 있다.
+		const : 변수의 값을 변경할 수 없다.
+ -->
+
+	<script type="text/javascript">
+		function getGrade() {
+			document.write('getGrage함수 실행<br>')
+			var kor = 95; //지역변수
+			//let kor = 95;    // 그 지역에서만쓰는 지역변수이고,  한번만 쓰고 싶을때 let
+			//kor = 95;       //  ->var가 없으면 static처럼 미리 만들어져서 전역변수처럼 사용가능. 그래서 출력된다
+			const k = 100      //const는 재정의 되지 않는다.
+			document.write('전역변수 kor01 : ' + kor01 + "<br>")
+			//k=200           //const는 재정의 되지 않아서 이 부분 출력안됌
+			document.write(k+"<br>")
+		}
+		var kor01 = 12345; //전역변수
+		getGrade();
+		document.write('지역변수 국어점수 : ' + kor);
+		
+/* 
+12345만 출력되는데 function안에서 만든 var변수는 지역변수라 그 구역에서만 가능하고, 
+밖에서만든 var변수는 전역변수라 function구역에서도 사용가능하다
+*/
+</script>
+</body>
+</html>
