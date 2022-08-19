@@ -1,0 +1,32 @@
+*{ margin: 0;}
+.wrap{ width: 1920px; margin: 0 auto; }
+
+nav{ width: 1920px; height: 100px; background-color:skyblue; position: fixed;}
+nav ul{ background-color:skyblue;padding:40px 20px 20px 20px;  list-style: none; display:flex;}
+nav ul li{ margin: 0 2px; padding: 7px 20px;  margin-top:  5px;}
+nav ul li a { text-decoration: none; color : #fff;}
+nav ul li a:hover{ color: white; padding-bottom: 3px; 
+					border-bottom: 1px solid white; transition : all 0.25s;}
+.nav-wrap { display: flex; justify-content: space-between;}
+
+.content { padding-bottom:  20px; margin-left: 50px;  color: white;}
+
+
+.back-image1{ background-image: url("../images/sea.jpg");
+				background-size:  1920px 1080px;}
+
+
+				
+.full-page{ height: 1080px; }
+.title{ padding: 80px 70px 10px 200px; color : black; font-weight:bold;
+		font-size:  40px; text-align: center;}
+.inner{ margin: 0 auto; height: 1000px; width: 1600px; background-color: white(.8);
+		color : black;}	
+
+#second button { margin-left: 50px; padding: 10px 20px; border-radius: 30px; 
+	background-color: skyblue; color :white;}
+#second button:active {border-radius: 30px; 	background-color:  #2F4F4F;}
+
+#third button { margin-left: 50px; padding: 10px 20px; border-radius: 30px; 
+	background-color: skyblue; color :white;}
+#third button:active {border-radius: 30px; 	background-color:  #2F4F4F;}

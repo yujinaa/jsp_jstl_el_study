@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	function click1(){
+		var n = document.getElementById('name1').value   // 현재 페이지에서 얻어오겠다.Element에 대한 id(name1)를… Elements는 태그들을 의미
+		                                                 // 그리고 사용자가 입력한 value값을 가져와라. 그리고 그 값을 변수 n에 저장해라
+		console.log(n)   //print 기능. 콘솔창에 값을 찍어주는것
+		document.getElementById('name1').value=""        // name1 value를 아무것도 없이( " ") 만들어라
+		document.getElementById('name2').value=n        // 그리고나서 얻어온 값을 var n에 넣어라
+		
+		var n3 = document.getElementById('name3')
+		//var msg = "<h1>배불러요</h1><h3>하하</h3>"
+		
+		//테이블 만들기
+		var DBData = ['떡볶이','김말이', '순대']
+		var msg = "<table border = '1'>"
+		for(i=0; i<DBData.length;i++){
+			msg += "<tr><th> " + DBData[i] +"</th></tr>"
+		}
+		msg += "</table>"		
+		n3.innerHTML= msg                              // innterHTML : 해당하는 안쪽에 (안녕하세요) 추가하는것
+	}
+	// 이미지 속성값주고, 버튼클릭시 이미지 변경
+		var bool = true
+	    function setImg(){
+	        if(bool){
+	            document.getElementById('img').src='water.jpg'
+	        }else{
+	            document.getElementById('img').src='cafe1.jpg'
+	        }
+	        bool = !bool
+	    }
+</script>
+<style type = "text/css">
+	#img {width:300px; height:300px;}
+</style>
+
+<body>
+<!-- 이미지 세팅하기 -->
+	<img id = "img" src = "cafe1.jpg">
+	<br><button type = "button" onclick="setImg()">이미지</button>
+<hr>
+	<input type = "text" id = "name1"><br>
+	<input type = "text" id = "name2"><br>
+	<div id = 'name3'>안녕하세요</div>
+	<input type = "button" value="버튼" onclick = "click1()">
+</body>
+</html>
