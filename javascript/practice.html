@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<!--
+이름, 나이, 주소를 입력 받아 출력하기
+ex) 
+당신의 이름은? a
+a의 나이는?
+a의 주소는?
+ -->
+<script type="text/javascript">
+
+	var name = prompt('당신의 이름은?')
+	var age = prompt( name + "의 나이는?")
+	var address = prompt( name + "의 주소는?")
+
+	
+	document.write("<table border='1'><tr>")
+	document.write("<th>이름</th><th>나이</th><th>주소</th></tr>")
+	document.write("<tr><td>"+name+"</td><td>"+age+"</td><td>"+address+"</td></tr></table>")
+	</script>
+<body>
+
+</body>
+</html>
