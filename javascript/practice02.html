@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 문제 : 아파트 층수를 입력하면 층수만큼 아파트 만들기 -->
+	<script type="text/javascript">
+
+		var num = prompt("아파트 층수 입력 :");
+		document.write("<hr><table border = '1'>");
+		for (; num > 0; num--) {
+			document.write("<tr>");
+			for (j = 1; j < 5; j++) {
+				document.write("<td>" + (num * 100 + j) + "호</td>");
+			}
+			document.write("</tr>");
+		}
+		document.write("</table>");
+	</script>
+</body>
+</html>
