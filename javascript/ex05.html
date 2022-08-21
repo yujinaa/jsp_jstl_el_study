@@ -5,9 +5,11 @@
 <title>Insert title here</title>
 </head>
 <body>
+
 	<!-- 	
 	• join : 합쳐주는 기능. 중간중간 끼워넣는 기능(합쳐진 결과값이 들어감)
  -->
+	<div id = 'tab'>111</div>
 	<script type="text/javascript">
 		var city = [ '서울', '부산', '대전' ]
 		var joindata1 = city.join()
@@ -71,11 +73,25 @@
 			{'id' : 333, 'name' :'홍길동3', 'addr': '산골짜기3'},
 			{'id' : 444, 'name' :'홍길동4', 'addr': '산골짜기4'}]
 			
-		function printData(items) {
+			
+		// • 테이블 만들기
+		//	방법1.document
+		
+		//	방법2.innerHTML
+		html = "<table border='1'><tr><th>id</th><th>name</th><th>addr</th></tr>"
+		function printData(items) {//items는 키,값인 배열 자체로 들어온다
+				html += "<tr>"
+				html += "<td>" +items.id + "</td>"
+				html += "<td>" +items.name + "</td>"
+				html += "<td>" +items['addr'] + "</td>"
+				html += "</tr>"
+
 			document.write(items.id + items.name+ items['addr'] + "<br>")
 			console.log(items)
 			}
 			data.forEach(printData)
+			html += "</table>"
+			document.getElementById('tab').innerHTML = html
 	</script>
 </body>
 </html>
