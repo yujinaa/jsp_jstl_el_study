@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 
+	setTimeout : 자기자신에 대한 함수를 호출
+ -->
+
+	<div id="digClock01"></div>
+	<button type="button" onclick="digClock()">시작</button>
+	<button type="button" onclick="end()">종료</button>
+
+	<script type="text/javascript">
+	var e;
+	function digClock(){
+		var today = new Date()
+		var day = today.getMonth()+1 + "월" + today.getDate()+"일"
+		var time = today.getHours()+"시"+today.getMinutes()+"분" + today.getSeconds()+ "초"
+		document.getElementById('digClock01').innerHTML = day+time
+
+		e = setTimeout('digClock()' , 1000)     //'digclock()함수를 1초마다 출력해라
+	}
+	
+	//	• clearTimeout : 흐르는 시간 멈추기 
+	function end(){
+		//document.write("종료 실행")
+		clearTimeout(e)
+	}
+
+	// 함수로 묶여있을 땐 코드가 아래쪽에 있어도 함수부터 처리하기에 먼저 실행된다(digclocl01). 이 경우 순서가 중요하지 않다 
+	// 하지만 함수로 묶여있지 않을 땐 코드가 위에서부터 차례대로 실행하기 때문에 원하는 대로 동작하지 않는다. 그래서 순서가 중요하다
+	
+</script>
+	<hr>
+	<!--  
+		• setInterval : 딱 한번만 실행한다. 자기자신에 쓸 수 있지만 문제발생
+		(매번 새롭게 만들어져서 여러개가 되기 때문에 초가 자꾸만 줄어 속도가 빨라진다)
+		그렇기 때문에 딱 한번만 실행되게끔 해야한다(여러 번 실행되면 안됨)
+	-->
+	<div id="digClock02"></div>
+	<button type="button" onclick="myStart()">시작</button>
+	<button type="button" onclick="myStop()">종료</button>
+
+	<script type="text/javascript">
+        var myVar;
+        function myStart(){
+            myVar = setInterval(myTimer, 1000)
+        }
+        
+        function myTimer(){
+            var d = new Date();
+            document.getElementById('digClock02').innerHTML = d.toLocaleString();
+        }
+        function myStop(){
+            clearInterval(myVar)
+        }
+    </script>
+
+
+</body>
+</html>
