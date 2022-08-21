@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- 	
+	• join : 합쳐주는 기능. 중간중간 끼워넣는 기능(합쳐진 결과값이 들어감)
+ -->
+	<script type="text/javascript">
+		var city = [ '서울', '부산', '대전' ]
+		var joindata1 = city.join()
+		var joindata2 = city.join('-그리고')
+		document.write('결과 1 : ' + joindata1 + "<br>")
+		document.write('결과 2 : ' + joindata2 + "<br>")
+
+		//• push : 현재 있는 데이터 마지막에 저장이 된다 .제일 마지막에 추가하는 기능  	
+		var p1 = city.push('대구', '강원도')
+		document.write('push : ' + p1 + "<br>") //p1의 개수를 알려줌
+		document.write('city : ' + city + "<br>")
+
+		//	• pop :제일 마지막 값을 빼온다
+		city.pop()
+		document.write('city : ' + city + "<br>")
+
+		//	• unshift : 제일 앞쪽으로 추가된다
+		city.unshift('강원도')
+		document.write('city : ' + city + "<br>")
+
+		//	• shift : 앞쪽부터 빠진다
+		city.shift('강원도')
+		document.write('city : ' + city + "<br>")
+		
+		//	• 반복문을 index를 이용해 배열 출력하기
+		for(i=0;i<city.length;i++){
+			document.write("for : " + city[i] + "<br>")
+		}
+		
+		//	• for Each :특정 함수 실행(해당하는 배열이 갖고 있는 값 만큼 특정함수를 실행)
+		function testArr() {
+			document.write("실행")
+		}
+		city.forEach(testArr)       //city가 가지고 있는 만큼 testArr를 실행해라
+		
+		//  • 인덱스 값
+		function testArr(item, index) {
+			document.write("실행 : " + item + index + "<br>" )
+			}
+			city.forEach(testArr)
+			
+		//포이치 문을 이용해서 배열에 1~10까지 저장 후 합 구하기
+		var data = [1,2,3,4,5,6,7,8,9,10]
+		var sum = 0
+			function sumF(item){
+				sum+= item
+			}
+			data.forEach(sumF)
+			document.write("합 :  " + sum + "<br>")
+			
+		
+		// • 자바 해쉬맵처럼 키와 밸류로 쌍으로 이루어진 문법이 있다.  자바 스크립트 객체 형태
+		// 방법1.
+		var data = {'key1' : 100, 'key2' : 200 }
+		document.write(data.key1  + "," + data['key2'] + "<br>")
+		
+		// 방법2.배열형태
+		var data= [
+			{'id' : 111, 'name' :'홍길동1', 'addr': '산골짜기1'},
+			{'id' : 222, 'name' :'홍길동2', 'addr': '산골짜기2'},
+			{'id' : 333, 'name' :'홍길동3', 'addr': '산골짜기3'},
+			{'id' : 444, 'name' :'홍길동4', 'addr': '산골짜기4'}]
+			
+		function printData(items) {
+			document.write(items.id + items.name+ items['addr'] + "<br>")
+			console.log(items)
+			}
+			data.forEach(printData)
+	</script>
+</body>
+</html>
