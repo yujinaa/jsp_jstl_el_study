@@ -6,11 +6,30 @@
 
 <script type="text/javascript">
 		function init() {                  // init은 보통 초기화할 때 쓰기 때문에 자동으로 호출되게 한다
-			alert('환영합니다')
+			//alert('환영합니다')
 		}
+		
+		// 마우스가 들어왔다 나갈때 색 변경
+		function over(obj) {           //  over의 메소드를 만들어준다
+			obj.style.color = "red"   // this(자기자신)의 값을 style로 변경하겠다
+			obj.innerHTML = 'Mouse over this text'
+			
+		}
+		function out() {
+			document.getElementById('h1').style.color = 'black'     // 이때는 this값이 안들어온다
+			document.getElementById('h1').innerHTML = "MOUSE OUT"    // 마우스 나갔을때 글자 변경
+		}
+
 </script>
 </head>
 <body onload="init()">     <!-- 초기화 하고자 할 때 body에 onload를 쓴다. -->
-	<h1>Mouse over this text</h1>
+
+	<!-- 	
+	• onmouseover : 마우스가 들어왔을 때
+	• onmouseout   : 마우스가 나갔을 때
+	 -->
+	<h1 id="h1" onmouseover="over(this)" onmouseout="out()"> <!-- this : 자기 자신에 대한 값을 넘긴다 -->
+		Mouse over this text
+	</h1>
 </body>
 </html>
