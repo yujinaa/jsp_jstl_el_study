@@ -10,7 +10,11 @@
 	var img
 	function add() {
 		img = document.createElement("img")        // createElement : 태그를 만드는 명령어
-		img.src = "cafe1.jpg"
+		
+		img.setAttribute("src", "img.jpg")        //  setAttribute를 사용해서도 가능하다
+		//img.src = "img.jpg"                    ->이렇게 . 찍어서도 가능하고
+
+		//img.src = "cafe1.jpg"
 		//img.width = 100                             //  어떻게줘도 상관없다. 이건 width 쓴거고
 		//img.style.height = "100px"                 // 이건 style속성을 준것
 		
