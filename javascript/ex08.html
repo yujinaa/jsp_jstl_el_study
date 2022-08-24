@@ -11,10 +11,10 @@
 	function add() {
 		img = document.createElement("img")        // createElement : 태그를 만드는 명령어
 		img.src = "cafe1.jpg"
-		img.width = 100                             //  어떻게줘도 상관없다. 이건 width 쓴거고
-		img.style.height = "100px"                 // 이건 style속성을 준것
+		//img.width = 100                             //  어떻게줘도 상관없다. 이건 width 쓴거고
+		//img.style.height = "100px"                 // 이건 style속성을 준것
 		
-		img.id = "img" 
+		img.id = "img" //해당 id값을 처리
 		
 		document.body.appendChild(img)              // body라는 태그에 자식을 추가하겠다(appendChild) img를
 	}
@@ -22,6 +22,10 @@
 		document.body.removeChild(img)
 	}
 </script>
+<style>
+	#img  { width: 50px; height: 200px;}
+</style>
+
 </head>
 <body>
 	<p id="test">test</p>
